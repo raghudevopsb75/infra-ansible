@@ -12,7 +12,7 @@
 #        wait: true
 
     - name: List all EIP addresses for a VM.
-      amazon.aws.ec2_eip_info:
+      amazon.aws.ec2_instance_info::
         region: us-east-1
         filters:
            instance-id: i-0d03910b43af7e01c
