@@ -24,7 +24,7 @@ pipeline {
       steps {
         script {
           env.ssh_user = sh (script: 'aws ssm get-parameter --name "ssh_username" --query "Parameter.Value" --output text', returnStdout: true).trim()
-          //env.ssh_pass = sh (script: 'aws ssm get-parameter --name "ssh_password" --query "Parameter.Value" --output text --with-decryption" --output text', returnStdout: true).trim()
+          env.ssh_pass = sh (script: 'aws ssm get-parameter --name "ssh_password" --query "Parameter.Value" --output text --with-decryption" --output text', returnStdout: true).trim()
         }
 //        wrap([$class: "MaskPasswordsBuildWrapper", varPasswordPairs: [[password: ssh_pass]]]) {
 //
