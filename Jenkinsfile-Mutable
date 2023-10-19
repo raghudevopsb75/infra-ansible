@@ -2,6 +2,10 @@ pipeline {
 
   agent any
 
+  options {
+    ansiColor('xterm')
+  }
+
   parameters {
     choice(name: 'ENV', choices: ['dev', 'prod'], description: 'Choose Environment')
     choice(name: 'APP_NAME', choices: ['backend', 'frontend'], description: 'Choose AppName')
